@@ -1,27 +1,18 @@
-Feature: Supra Moteur
+Feature: Operations
 
-  Scenario: deoublonnage cas: inter-moteur
+  Scenario: Calcul de l'addition
 
-    Given  les interactions suivantes
+    Given  les nombres A et B suivant
       # transform this data table to Interaction object
-      |clientId | interactionId            | interactionDate  | moteurId |
-      |1        | PEL                      | 2019-05-09       | OAP      |
-      |1        | ES LIBRE                 | 2019-05-09       | OAP      |
-      |1        | LIV JEUNE                | 2019-05-09       | OAP      |
-      |1        | MOBILEO                  | 2019-05-09       | OAP      |
-      |1        | KYC                      | 2019-05-09       | PE       |
-      |1        | ES LIBRE                 | 2019-05-09       | PE       |
-      |1        | MOBILEO ASSU VIE         | 2019-05-09       | PE       |
+      |A | B|
+      |1 | 1|
 
-    When j'applique le dedoublonnage
+
+    When je calcule l'addition
 
     Then le resultat est le suivant
 
-      |clientId   | interactionId     | interactionDate  | moteurId         |
-      |1          | PEL               | 2019-05-09       | OAP              |
-      |1          | ES LIBRE          | 2019-05-09       | OAP,PE           |
-      |1          | LIV JEUNE         | 2019-05-09       | OAP              |
-      |1          | MOBILEO           | 2019-05-09       | OAP              |
-      |1          | KYC               | 2019-05-09       | PE               |
-      |1          | MOBILEO ASSU VIE  | 2019-05-09       | PE               |
+      |clientId|
+      |2       |
+
 

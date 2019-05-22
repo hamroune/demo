@@ -11,4 +11,4 @@ import org.junit.runner.RunWith;
         features = ("classpath:com.bigapps.demo.features"),
         glue = ("classpath:com.bigapps.demo.steps")
 )
-public class Runner{}
+public class RunnerTest {}
